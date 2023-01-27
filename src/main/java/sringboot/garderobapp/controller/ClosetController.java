@@ -64,7 +64,7 @@ public class ClosetController {
         return closetMapper.mapToDto(closet);
     }
 
-    @DeleteMapping("delete-clothing/{id}")
+    @DeleteMapping("/delete-clothing/{id}")
     public boolean delete(@PathVariable Long id, Authentication auth) {
         Closet closet = getCloset(auth);
         Clothing clothingToDelete = closetService.findClothingById(id, closet);
